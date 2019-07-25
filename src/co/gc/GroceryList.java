@@ -76,13 +76,18 @@ public class GroceryList {
 		System.out.println("Thanks for your order!");
 		System.out.println("Here's what you got");
 //get user selection
-		System.out.printf("\n" + itemsOrdered + "\t\t\t\t $" + itemPrice + "\n");
+//		System.out.printf("\n" + itemsOrdered + "\t\t\t\t $" + itemPrice + "\n");
 //display cart
 
+		for (int i = 0; i < itemsOrdered.size(); i++) {
+			System.out.println(itemsOrdered.get(i)+"\t\t\t\t"+ " $"+itemPrice.get(i));
+			
+		}
 //display avg
 		System.out.println("Average price for items ordered was: $" + avgPrice(itemPrice));
-		System.out.println();
-
+		
+		
+//		printAll((itemsOrdered), (itemPrice)); 
 		scan.close();
 	}
 
@@ -104,5 +109,25 @@ public class GroceryList {
 		}
 		return result.toString();
 	}
+//	public static void printBoth(ArrayList<Double> itemPrice) {
+//		for (int i = 0; i < itemPrice.size(); i++) {
+//			Double priceI = itemPrice.get(i);
+//			System.out.println(priceI);
+//		}
+//		
+//		
+//	}
+//	public static void printBoth2(ArrayList<String> itemO) {
+//		for (int i = 0; i < itemO.size(); i++) {
+//			String orderI = itemO.get(i);
+//			orderI; }
+//	}
+//	public static void printAll(ArrayList<String> itemO, ArrayList<Double> itemPrice) {
+//		for (int i = 0; i < itemO.size(); i++) {
+//			String orderI = itemO.get(i);
+//			for (int j = 0; j < itemPrice.size(); j++) {
+//				Double priceI = itemPrice.get(j);
+//		System.out.print((orderI)+"\t\t\t\t"+(priceI)+"\n");}}
+//	}
 
 }
