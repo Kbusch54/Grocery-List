@@ -84,7 +84,8 @@ public class GroceryList {
 			
 		}
 //display avg
-		System.out.println("Average price for items ordered was: $" + avgPrice(itemPrice));
+		System.out.println("Average price for items ordered was: $" + String.format("%.2f", avgPrice(itemPrice)));
+		System.out.println("Total cost $"+ String.format("%.2f", price(itemPrice)));
 		
 		
 //		printAll((itemsOrdered), (itemPrice)); 
@@ -101,6 +102,14 @@ public class GroceryList {
 		}
 		return avg;
 	}
+		
+		public static Double price(ArrayList<Double> itemPrice) {
+			double sum = 0.0;
+			for (double i = 0.0; i < itemPrice.size(); i++) {
+				sum += itemPrice.get((int) i);
+			}
+			return sum;
+		}
 
 	public static String displayMenu(Map<String, Double> items) {
 		StringBuilder result = new StringBuilder();
@@ -109,25 +118,6 @@ public class GroceryList {
 		}
 		return result.toString();
 	}
-//	public static void printBoth(ArrayList<Double> itemPrice) {
-//		for (int i = 0; i < itemPrice.size(); i++) {
-//			Double priceI = itemPrice.get(i);
-//			System.out.println(priceI);
-//		}
-//		
-//		
-//	}
-//	public static void printBoth2(ArrayList<String> itemO) {
-//		for (int i = 0; i < itemO.size(); i++) {
-//			String orderI = itemO.get(i);
-//			orderI; }
-//	}
-//	public static void printAll(ArrayList<String> itemO, ArrayList<Double> itemPrice) {
-//		for (int i = 0; i < itemO.size(); i++) {
-//			String orderI = itemO.get(i);
-//			for (int j = 0; j < itemPrice.size(); j++) {
-//				Double priceI = itemPrice.get(j);
-//		System.out.print((orderI)+"\t\t\t\t"+(priceI)+"\n");}}
-//	}
-
 }
+
+
